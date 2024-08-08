@@ -20,6 +20,17 @@ $(EXEC): $(OBJ)
 clean:
 	rm -rf $(OBJ) $(EXEC)
 ```
+The selected code is a function named reverseWords that takes a sentence as input and reverses the order of the words while maintaining the order of the characters within each word. The function uses a two-step approach:
+
+1. It first reverses the entire sentence by swapping characters from the beginning and end of the sentence until the middle is reached.
+2. Then, it reverses each word within the sentence by finding the start and end indices of each word, and swapping characters from the start and end of the word until the middle is reached.
+
+
+The function uses a few helper variables to keep track of the start and end indices of the sentence and the words. It also uses a temporary variable (temp) to swap characters during the reversal process.
+
+Finally, the function prints the reversed sentence using printf.
+
+This code is part of a larger program that reads a sentence from the user, calls the reverseWords function, and prints the reversed sentence. The program also handles input validation and limits the number of words and characters in the sentence.
 
 # C++ and C++ Library and program documentation
 ```c++
@@ -97,6 +108,22 @@ int main() {
     return 0;
 }
 ```
+The selected code within the main function is responsible for taking user input, storing it in a 2D array of characters (sentence), and then calling the reverseWords function to reverse the order of the words in the sentence.
+
+Here's a breakdown of the selected code:
+
+1. It declares a 2D array sentence of size MAX_WORD_COUNT x MAX_WORD_LENGTH + 1 to store the input sentence.
+2. It initializes a variable wordCount to keep track of the number of words entered by the user.
+3. It prompts the user to enter a sentence, with a maximum length of MAX_WORD_COUNT words and each word having a maximum length of MAX_WORD_LENGTH characters.
+4. It uses a while loop to read user input line by line using fgets. It checks if the maximum word count has been reached or if the input is NULL.
+5. Inside the loop, it calculates the length of the input and removes the newline character if present.
+6. It uses strcpy to copy the input into the sentence array at the current wordCount position.
+7. It increments the wordCount after each successful input.
+8. After all user input has been taken, it calls the reverseWords function with the first row of the sentence array (sentence[0]) as the argument.
+9. Finally, it returns 0 to indicate successful program execution.
+
+
+The reverseWords function is responsible for reversing the order of the words in the sentence. It uses a combination of string manipulation and two nested loops to achieve this. The function is not included in the selected code snippet, but it is called within the main function.
 
 # install makefiles
 $-> make all
